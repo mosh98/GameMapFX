@@ -56,6 +56,11 @@ public class GameViewManager {
 
             }
         });
+
+
+        public void createNewGame(Stage menuStage,Character character){
+
+        }
     }
 
 }
