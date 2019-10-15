@@ -3,6 +3,7 @@ package sample;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -37,11 +38,21 @@ public class GameViewManager {
             @Override
             public void handle(KeyEvent keyEvent) {
 
+                if(keyEvent.getCode() == KeyCode.LEFT){
+
+                }else if(keyEvent.getCode() == KeyCode.RIGHT){
+
+                }
             }
         });
         gameScene.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
+                if(keyEvent.getCode() == KeyCode.LEFT){
+
+                }else if(keyEvent.getCode() == KeyCode.RIGHT){
+
+                }
 
             }
         });
