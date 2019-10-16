@@ -2,11 +2,18 @@ package sample;
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class GameViewManager {
 
@@ -18,10 +25,15 @@ public class GameViewManager {
     private static final int GAME_HEIGHT = 800;
 
 
-    private Stage menuStage;
-    private ImageView ship;
 
-    public GameViewManager(){
+
+    private ImageView mario;
+    Image image = new Image(new FileInputStream("/Users/moslehmahamud/Desktop/GameMapFX/src/res/super_mario.png"));
+    private Character imMario = new Character("SavageBeast",100,22,1,image);
+
+
+
+    public GameViewManager() throws IOException {
     initializeStage();
     }
 
@@ -58,9 +70,24 @@ public class GameViewManager {
         });
 
 
-        public void createNewGame(Stage menuStage,Character character){
 
-        }
+    }
+
+    public void createNewGame(){
+        createCharatcer(imMario);
+        gameStage.show();
+    }
+
+
+    public void createCharatcer(Character c){
+    mario = new ImageView(c.getImageUrl());
+
+    mario.setLayoutX(GAME_WIDTH / 2);
+    mario.setLayoutX(GAME_HEIGHT - 90);
+
+    gamePane.getChildren().add(mario);
+
+
     }
 
 }

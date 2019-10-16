@@ -1,5 +1,9 @@
 package sample;
 
+import javafx.scene.image.Image;
+
+import java.awt.image.BufferedImage;
+
 public class Character {
     private String name;
     private int health;
@@ -8,14 +12,15 @@ public class Character {
     private int positionX;
     private int positionY;
     private boolean isDead;
-    private String image;
+    private Image image;
 
-    public Character(String name, int health, int attack, int level,String image) {
+    public Character(String name, int health, int attack, int level, Image image) {
         this.name = name;
         this.health = health;
         this.attack = attack;
         this.level = level;
         this.image=image;
+
     }
 
     public void movement(){
@@ -44,7 +49,7 @@ public class Character {
         this.level = level;
     }
 
-    public String getImageUrl(){
+    public Image getImageUrl(){
         return image;
     }
 }
